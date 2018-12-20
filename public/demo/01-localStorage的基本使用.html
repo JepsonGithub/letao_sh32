@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<script>
+
+  // cookie  sessionStorage  localStorage 特点和区别
+  /*
+  * cookie特点:
+  *   1. 大小 4k
+  *   2. 生命周期, 默认会话级别, 但是可以设置过期时间
+  *   3. cookie中的数据可以在多个页面共享
+  *   4. cookie中的数据, 在请求时会进行自动携带
+  *      一般存储 sessionId, 可以实现登录状态保持 (会话保持)
+  *
+  * sessionStorage (使用频率不高)
+  *   1. 大小 5M
+  *   2. 生命周期, 会话级别, 一旦关闭浏览器, 就销毁了
+  *   3. 在多个窗口之间不能共享数据
+  *
+  *
+  * localStorage  (重要)
+  *   1. 大小 5M
+  *   2. 生命周期永久存储, 只要用户不手动删除
+  *   3. 多个页面窗口是可以共享数据
+  *
+  * api: 以键值对的方式存储数据
+  *   1. localStorage.setItem( key, value );  // 存储
+  *   2. localStorage.getItem( key ); // 获取
+  *   3. localStorage.removeItem( key );  // 删除单个
+  *   4. localStorage.clear();   // 清空所有
+  *
+  * localStorage 中只能以键值对的方式, 存储字符串格式的数据
+  * localStorage 如何存取复杂数据类型 ?
+  * 1. 存储
+  *    先将复杂数据转换成 JSON字符串   JSON.stringify(obj/arr);
+  *    在进行存储 localStorage.setItem( key, jsonStr );
+  *
+  * 2. 获取
+  *    调用 localStorage.getItem( key ), 获取得到的是 JSON字符串
+  *    使用前要将 jsonStr 转换成 复杂数据类型  JSON.parse( jsonStr );
+  *
+  * 小作业: 利用localStorage存取一个复杂数据类型, 一个对象 { name: "如花花", age: "18" }
+  * */
+
+</script>
+
+</body>
+</html>
