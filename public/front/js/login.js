@@ -33,10 +33,22 @@ $(function() {
           mui.toast("用户名或者密码错误");
           return;
         }
-
         if ( info.success ) {
-          // 成功, 跳转个人中心
-          location.href = "user.html";
+          // 成功
+          // (1) 如果有参数传递, 需要跳转回去
+          // (2) 如果没有参数传递, 正常跳转用户中心
+
+          if ( location.search.indexOf('retUrl') != -1 ) {
+            // 有参数, 获取地址, 进行跳转
+            var retUrl = location.search.replace("?retUrl=", "");
+            location.href = retUrl;
+          }
+          else {
+            // 没有参数
+            location.href = "user.html";
+          }
+
+
         }
       }
     })
